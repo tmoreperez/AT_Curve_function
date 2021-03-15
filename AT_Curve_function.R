@@ -7,7 +7,7 @@
 #want to estimate the heat tolerances for 4)  indicate if you want to make plots, 6) the number of bootsrap iterations for estimating heat tolerances,
 # and 7) the model(s) you want to use.
 
-setwd("/Users/timothyperez/Google Drive/Git_stuff/Git_projects/AT_curve_function/")
+setwd("Your directory here/AT_curve_function/")
 atdat=read.csv("Sample_AT.data.csv")
 set.seed(23)
 #Tleaf=atdat$Tleaf; A=atdat$A; id=atdat$species; plot.est=T; boots; mods=3
@@ -114,4 +114,4 @@ ATcurve=function( Tleaf, Assimilation, id, plot.est, boots, mods){
 #When plotting model 2, I've been noticing that at high (and sometimes low) temperatures, the model tends to increase
 #I think this is an artifact of the bootstrapping procedure when the model is re-fit. This increase in modeled A at high temperature
 #occurs when temperatures higher than those used to fit the model are used to predict new values of A. 
-ATcurve(Tleaf=atdat$Tleaf, A=atdat$A, id=atdat$species, plot.est=T, boots=100, mods=2)
+ATcurve(Tleaf=atdat$Tleaf, A=atdat$A, id=atdat$species, plot.est=T, boots=100, mods=3)
